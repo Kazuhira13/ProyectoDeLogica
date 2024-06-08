@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Calculadora</title>
+        <link type="text/css" rel="stylesheet" href="Styles.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        
+        <script>
+            function evaluateExpression() {
+                var expression = document.calculator.ans.value;
+                
+                if (expression === "123") {
+                    document.getElementById("secretButton1").style.display = "inline";
+                } else if (expression === "456") {
+                    document.getElementById("secretButton2").style.display = "inline";
+                } else if (expression === "789") {
+                    document.getElementById("secretButton3").style.display = "inline";
+                } else {
+                    document.calculator.ans.value = eval(expression);
+                }
+                
+                checkAllSecrets();
+            }
+            
+            function checkAllSecrets() {
+                var secretButton1 = document.getElementById("secretButton1").style.display;
+                var secretButton2 = document.getElementById("secretButton2").style.display;
+                var secretButton3 = document.getElementById("secretButton3").style.display;
+
+                if (secretButton1 === "inline" && secretButton2 === "inline" && secretButton3 === "inline") {
+                    document.getElementById("achievementButton").style.display = "inline";
+                }
+            }
+
+            function showSecretMessage1() {
+                document.getElementById("secretMessage1").style.display = "inline";
+            }
+            
+            function redirectToVideoPage1() {
+                showSecretMessage1();
+            }
+            
+            function redirectToVideoPage2() {
+                window.location.href = "secreto1.html";
+            }
+
+            function playSecretSong() {
+                var audio = document.getElementById("secretSong");
+                audio.play();
+            }
+
+
+            function redirectToAchievementPage() {
+                window.location.href = "video.html";
+            }
+        </script>
+    </head>
+    <body>
+        <center><font color="White"><h1>Calculadora Simple</h1></font></center>
+        <center><font color="White"><h2>Es simple no oculta nada eso creo</h2></font></center>
+        <center><font color="White"><h2>No se quien hizo esta calculadora</h2></font></center>
+        <center>
+        <div id="appBg">
+            <form name="calculator">
+                <input type="textfield" name="ans" value="" autocomplete="off" readonly> 
+                <input type="button" value="7" onclick="document.calculator.ans.value+='7'" class="gray"> 
+                <input type="button" value="8" onclick="document.calculator.ans.value+='8'" class="gray">
+                <input type="button" value="9" onclick="document.calculator.ans.value+='9'" class="gray">
+                <input type="button" value="+" onclick="document.calculator.ans.value+='+'" class="orange">
+                <br>
+                <input type="button" value="4" onclick="document.calculator.ans.value+='4'" class="gray">
+                <input type="button" value="5" onclick="document.calculator.ans.value+='5'" class="gray">
+                <input type="button" value="6" onclick="document.calculator.ans.value+='6'" class="gray">
+                <input type="button" value="-" onclick="document.calculator.ans.value+='-'" class="orange">
+                <br>
+                <input type="button" value="1" onclick="document.calculator.ans.value+='1'" class="gray">
+                <input type="button" value="2" onclick="document.calculator.ans.value+='2'" class="gray">
+                <input type="button" value="3" onclick="document.calculator.ans.value+='3'" class="gray">
+                <input type="button" value="X" onclick="document.calculator.ans.value+='*'" class="orange">
+                <br>
+                <input type="button" value="0" onclick="document.calculator.ans.value+='0'" class="gray">
+                <input type="reset" value="C">
+                <input type="button" value="=" onclick="evaluateExpression()">
+                <input type="button" value="/" onclick="document.calculator.ans.value+='/'" class="orange">
+            </form>
+            <button id="secretButton1" style="display: none;" onclick="redirectToVideoPage1()">Primer Secreto</button>
+            <button id="secretButton2" style="display: none;" onclick="redirectToVideoPage2()">Segundo Secreto</button>
+            <button id="secretButton3" style="display: none;" onclick="playSecretSong()">Tercer Secreto</button>
+            <button id="achievementButton" style="display: none;" onclick="redirectToAchievementPage()">Logro</button>
+            <div id="messageContainer">
+                <p id="secretMessage1" style="display: none;">Bien hecho encontraste el primer secreto</p>
+            </div>
+            <audio id="secretSong" src="memes/Y2meta.app - L'amour Toujours (Small Mix) (320 kbps).mp3"></audio>
+        </div>
+        </center>
+    </body>
+</html>

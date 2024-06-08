@@ -1,0 +1,79 @@
+#appBg {
+    /* esto son los bordes de la calculadora */
+    height: 420px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    
+}
+
+#appBg form {
+    /* este es el fondo de la calculadora */
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+#appBg input[type=textfield] {
+    /* Este es el cuadro de texto donde muestra los datos la calculadora*/
+    height: 25%;
+    width: 100%;
+    cursor: default;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 15px;
+    text-align: right;
+    font-size: 50px;
+    border: 0;
+    outline: none;
+}
+
+#appBg input[type=button], input[type=reset] {
+    /* botones para la calculadora*/
+    width: 22%;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    color: black;
+    padding: 18px;
+    margin: 3px;
+    border: 0;
+    border-radius: 100%;
+}
+
+#appBg .orange {
+    background-color: rgb(253, 149, 3) !important;
+    color: white !important;
+}
+
+#appBg .gray {
+    background-color: rgb(51, 51, 51) !important;
+    color: white !important;
+}
+
+body{
+    background-image: url(html-color-codes-color-tutorials.jpg);
+    background-size: cover;
+}
+
+#messageContainer {
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.secret-message-right {
+    right: 10px;
+    left: auto;
+}
+
+ /* Seccion de informacion sobre la calculadora 
+ 
+ <input type="button" value="=" onclick="document.calculator.ans.value=eval(document.calculator.ans.value)">
+ en el caso del boton igual el eval es el encargado de hacer la funcion de las operaciones 
+ 
+ 
+ */
